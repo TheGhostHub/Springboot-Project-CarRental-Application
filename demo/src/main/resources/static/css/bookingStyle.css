@@ -1,0 +1,21 @@
+.main-container {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.main-image-top-input {
+  border: 1px solid black;
+  height: 617px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.input-container {
+  width: 60%;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+.input-container div {
+  padding: 10px;
+}

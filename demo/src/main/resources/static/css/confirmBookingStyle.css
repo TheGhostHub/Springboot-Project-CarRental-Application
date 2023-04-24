@@ -1,0 +1,32 @@
+.main-container{
+	margin-right:80px;
+	margin-left:80px;
+}
+
+
+.booked-list .image-container {
+  width: 150px;
+  height: 100px;
+}
+.booked-list .image-container img {
+  width: 100%;
+  height: 100%;
+}
+.booked-list .data p {
+    margin-top: 35px;
+  font-weight: bold;
+}
+.booked-list .heading1{
+	margin-left:50px;
+}
+.main-container .main-text i {
+  font-size: 35px;
+  margin-top:24px;
+  margin-right:18px;
+}
+.main-container .main-text h1{
+	background-color:#D7D7D7;
+}
+.main-container .main-text i:hover {
+  color: dodgerblue;
+}

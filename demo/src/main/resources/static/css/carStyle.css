@@ -1,0 +1,207 @@
+.main-container {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.main-image-container {
+  height: 800px;
+  background-image: url(../images/carMain.jpg);
+  background-size: cover;
+  text-align: center;
+}
+.main-image-container h1 {
+  position: relative;
+  top: 15%;
+  color: white;
+  font-size: 80px;
+}
+.input-group {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 150px;
+}
+.fa-search {
+  position: absolute;
+  margin-top: -30px;
+  margin-left: 110px;
+}
+.form-control {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.searchBar {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 150px;
+  color: black;
+}
+
+.section2 {
+  /* border: 1px solid black; */
+  height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.subsec1,
+.subsec2,
+.subsec3 {
+  display: flex;
+  height: fit-content;
+  align-items: center;
+}
+.section2 .icon {
+  font-size: 50px;
+  color: rgb(224, 189, 29);
+}
+.section2 .strongtext {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.section3 {
+  display: flex;
+  justify-content: center !important;
+  padding: 30px;
+}
+.section3 .mainContainer {
+  width: 350px;
+  height: 500px;
+  border-radius: 30px;
+  border: 1px solid rgb(190, 184, 184);
+}
+.section3 .mainContainer .subimage {
+  height: 275px;
+  width: 100%;
+  background-image: url(../images/rover.jpg);
+  background-size: cover;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.section3 .mainContainer .text-icon {
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.section3 .mainContainer .text-icon input {
+  border-radius: 10px;
+  border-color: rgb(211, 193, 28);
+  padding: 10px;
+}
+.section4 .mainContainer {
+  width: 350px;
+  height: 500px;
+  border-radius: 30px;
+  border: 1px solid rgb(190, 184, 184);
+  margin-top: 30px;
+}
+.section4 .mainContainer .subimage {
+  height: 275px;
+  width: 100%;
+  /* background-image: url(../images/rover.jpg); */
+  background-size: cover;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.section4 .mainContainer .subimage img{
+	border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.section4 .mainContainer .text-icon {
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.section4 .mainContainer .text-icon input {
+  border-radius: 10px;
+  border-color: rgb(211, 193, 28);
+  padding: 10px;
+}
+.section4 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.section5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.section5 .im1Container {
+  width: 500px;
+  height: 410px;
+  background-image: url(../images/img2.jpg);
+  background-size: cover;
+  border-radius: 40px;
+}
+.section5 .im1Container p {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  font-size: 40px;
+  transform: translateY(-50%);
+  color: white;
+}
+.section5 .im2Container {
+  background-image: url(../images/rover2.jpg);
+  background-size: cover;
+  width: 400px;
+  height: 450px;
+  border-radius: 40px;
+}
+.section5 .im3Container {
+  background-image: url(../images/img6.jpg);
+  background-size: cover;
+  width: 400px;
+  height: 450px;
+  border-radius: 40px;
+}
+.section5 .im4Container {
+  width: 500px;
+  height: 410px;
+  background-image: url(../images/img4.jpg);
+  background-size: cover;
+  border-radius: 40px;
+}
+.section5 .im4Container p {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  font-size: 40px;
+  transform: translateY(-50%);
+  color: white;
+}
+.sideBar li a {
+  padding: 15px;
+  text-decoration:none;
+  color:black;
+}
+@media screen and (max-width: 1080px) {
+  .main-container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media screen and (max-width: 1080px){
+	.sideBar.active {
+    left: 0px;
+}
+}
+@media screen and (max-width: 576px) {
+  .section2 .icon {
+    font-size: 30px;
+  }
+  .section2 .strongtext {
+    font-size: 15px;
+  }
+  .section2 p {
+    font-size: 10px;
+  }
+  .main-image-container h1{
+  	display:none;
+  }
+}

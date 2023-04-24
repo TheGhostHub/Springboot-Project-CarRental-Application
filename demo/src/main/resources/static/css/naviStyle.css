@@ -1,0 +1,88 @@
+.navbar1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainDiv {
+  /* border: 1px solid black; */
+  position: sticky;
+  top: 0;
+}
+.listBar {
+  /* border: 1px solid black; */
+  font-size: 40px;
+  color: black;
+  line-height: 90px;
+  margin-right: 50px;
+  cursor: pointer;
+  display: none;
+}
+
+.pages {
+  margin-right: 30px;
+}
+.pages ul li {
+  padding-left: 50px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+.pages ul li a{
+	 text-decoration: none;
+	 color:black;
+}
+.pages ul li:hover {
+  text-decoration: underline 5px solid black;
+}
+.mainDiv {
+  height: 100px;
+  width: 100%;
+  z-index: 1;
+  background-color: rgb(215, 215, 215);
+}
+.sideBar {
+  width: 200px;
+  text-align: center;
+  position: fixed;
+  background-color: rgb(215, 215, 215);
+  top: 100px;
+  left: -100%;
+  transition: all 0.5s;
+}
+.sideBar li {
+  padding: 15px;
+}
+
+.sideBar li:hover {
+  background-color: blueviolet;
+}
+@media screen and (max-width: 1080px) {
+  .pages {
+    margin-right: 20px;
+  }
+  .pages ul li {
+    padding-left: 35px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .pages ul li {
+    padding-left: 25px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pages {
+    margin-right: 20px;
+  }
+  .pages ul li {
+    padding-left: 15px;
+  }
+  .pages {
+    display: none;
+  }
+  .listBar {
+    display: block;
+  }
+  .active.sideBar {
+    left: 0px;
+  }
+}

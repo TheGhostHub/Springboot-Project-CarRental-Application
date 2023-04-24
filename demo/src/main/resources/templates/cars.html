@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link
+  		rel="stylesheet"
+  		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+	/>
+
+    <!--CSS -->
+    
+    <link rel="stylesheet" href="" th:href="@{/css/carStyle.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/naviStyle.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/footer.css}" />
+  </head>
+  <body>
+    <div class="main-container">
+    <div class="mainDiv">
+        <div class="navbar1">
+          <div class="w-auto mx-5 mt-4">
+            <img th:src="@{/images/logo.png}" alt="" />
+          </div>
+          <div class="pages">
+            <ul class="text-black list-unstyled d-flex">
+              <li class=""><a th:href="@{/}">HOME</a></li>
+              <li class=""><a th:href="@{/cars}">CARS</a></li>
+              <li class=""><a th:href="@{/aboutUs}">ABOUT US</a></li>
+              <li class=""><a th:href="@{/confirmBooking}">MY BOOKINGS</a></li>
+              <li><i class="fa-solid fa-cart-shopping fs-4"></i></li>
+              <li ><a th:href="@{/profile}"><i class="fa-regular fa-circle-user fs-3 user"></i></a></li>
+            </ul>
+          </div>
+          <label for="check" class="listBar"
+            ><i class="fa-solid fa-bars"></i
+          ></label>
+        </div>
+      </div>
+      
+      <ul class="list-unstyled sideBar">
+              <li class=""><a th:href="@{/}">HOME</a></li>
+              <li class=""><a th:href="@{/cars}">CARS</a></li>
+              <li class=""><a th:href="@{/aboutUs}">ABOUT US</a></li>
+              <li class=""><a th:href="@{/confirmBooking}">MY BOOKINGS</a></li>
+        	<li ><a th:href="@{/profile}">MY ACCOUNT</a></li>
+      </ul>
+      
+      <div class="main-image-container">
+        <h1 class="text-uppercase">
+          Search Vehicles for <br />
+          your location
+        </h1>
+      </div>
+
+      <div class="section2">
+        <div class="subsec1">
+          <div class="icon"><i class="fa-solid fa-gift"></i></div>
+          <div class="mt-4 mx-4">
+            <p>
+              <strong class="strongtext"> promo code</strong><br />
+              No charge
+            </p>
+          </div>
+        </div>
+        <div class="subsec2">
+          <div class="icon"><i class="fa-solid fa-credit-card"></i></div>
+          <div class="mt-3 mx-4">
+            <p>
+              <strong class="strongtext"> quick payment</strong><br />
+              100% secure payment
+            </p>
+          </div>
+        </div>
+        <div class="subsec3">
+          <div class="icon"><i class="fa-solid fa-headset"></i></div>
+          <div class="mt-4 mx-4">
+            <p>
+              <strong class="strongtext"> 27/7 support</strong><br />
+              Quick support
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-5">
+        <h1 class="text-uppercase">
+          collection of <br />
+          vehicles
+        </h1>
+        <h5>See all colection <i class="fa-solid fa-arrow-right"></i></h5>
+      </div>
+
+      <!-- Section4 Start -->
+      <div class="section4">
+        <div class="mainContainer" th:each="c :${car}">
+          <div class="subimage">
+            <img
+              th:src="${'/images/'+{c.name}+'.jpg'}"
+              alt=""
+              style="width: 100%; height: 100%"
+            />
+          </div>
+          <div class="text-icon">
+            <p th:text="${c.model+'-'+c.name}">
+              
+            </p>
+            <i class="fa-sharp fa-solid fa-cart-shopping float-end fs-4"></i>
+            <p th:text="${'LKR.'+c.price}"></p>
+            <p th:text="${c.availability}"></p>
+            <div th:switch="${c.availability}">
+            <a th:href="@{/bookedCar(carId=${c.id})}"><input th:case="'Available'" type="button" value="Book Now"/></a>
+            <a th:href="@{/bookedCar(carId=${c.id})}"><input th:case="'Rented'" type="button" value="Not Available" disabled/></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Section4 End -->
+
+      <div class="px-5">
+        <h1 class="text-uppercase text-center mt-5">
+          We have great <br />
+          collection of vehicles
+        </h1>
+      </div>
+
+      <div class="section5">
+        <div class="im1Container mt-3">
+          <p class="text-uppercase mt-3">most populer</p>
+        </div>
+        <div class="im2Container mt-3"></div>
+        <div class="im3Container mt-3"></div>
+        <div class="im4Container mt-3">
+          <p class="text-uppercase">see all</p>
+        </div>
+      </div>
+      
+      <div>
+        <footer class="footer">
+          <div class="">
+            <h2 class="text1">
+              Subscribe to our Future of Work Newsletter and learn more <br />
+              about modern digital workplaces
+            </h2>
+
+            <div class="subemail">
+              <input class="emailbox" type="text" placeholder="Your Email" />
+              <button class="subbtn" type="button">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="row justify-content-evenly">
+            <div
+              class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center"
+            >
+              <div class="single-box">
+                <h4>DOMO</h4>
+                <ul class="list-unstyled list">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">How are we diffrent?</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">First of its kind Marketplace</a></li>
+                  <li><a href="#">Become a Partner</a></li>
+                  <li><a href="#">domo Mobile APPs</a></li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center"
+            >
+              <div class="single-box">
+                <h4>PRODUCTS</h4>
+                <ul class="list-unstyled list">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Cloud Hosting</a></li>
+                  <li><a href="#">CMS Hosting</a></li>
+                  <li><a href="#">WordPress Hosting</a></li>
+                  <li><a href="#">Email Hosting</a></li>
+                  <li><a href="#">VPS Hosting</a></li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center"
+            >
+              <div class="single-box">
+                <h4>RESOURCE</h4>
+                <ul class="list-unstyled list">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Cloud Hosting</a></li>
+                  <li><a href="#">CMS Hosting</a></li>
+                  <li><a href="#">WordPress Hosting</a></li>
+                  <li><a href="#">Email Hosting</a></li>
+                  <li><a href="#">VPS Hosting</a></li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center"
+            >
+              <div class="single-box">
+                <h4>SUPPORT</h4>
+                <ul class="list-unstyled list">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Cloud Hosting</a></li>
+                  <li><a href="#">CMS Hosting</a></li>
+                  <li><a href="#">WordPress Hosting</a></li>
+                  <li><a href="#">Email Hosting</a></li>
+                  <li><a href="#">VPS Hosting</a></li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center"
+            >
+              <div class="single-box">
+                <h4>CONTACT</h4>
+                <ul class="list-unstyled list">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Cloud Hosting</a></li>
+                  <li><a href="#">CMS Hosting</a></li>
+                  <li><a href="#">WordPress Hosting</a></li>
+                  <li><a href="#">Email Hosting</a></li>
+                  <li><a href="#">VPS Hosting</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="footer-bar">
+            <div class="container">
+              <div class="row d-flex-justify-content-sm-center">
+                <div
+                  class="col-md-6 col-sm-6 justify-content-sm-between d-flex-justify-content-start"
+                >
+                  <p class="footer-text">© 2023 All Rights Reserved</p>
+                </div>
+                <div
+                  class="col-md-6 col-sm-6 text-center text-md-right d-flex justify-content-end"
+                >
+                  <div class="footer-social justify-content-sm-between list">
+                    <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <!-- JS -->
+  <script th:src="@{/js/indexJs.js}"></script>
+</html>
